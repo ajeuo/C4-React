@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+<div id="input"></div> <br>
+
+<script type="text/babel">
+function App() {
+    const [output, setOutput] = React.useState(1); 
+    const [output2, setOutput2] = React.useState(1); 
+    const [operator, setOperator] = React.useState("plus"); 
+    const [result, setResult] = React.useState("");
+
+    React.useEffect(() => { //update de useStates
+        if (!output || !operator || !output2) {
+            setResult("");
+            return;
+        }
+
+        const num1 = parseInt(output);
+        const num2 = parseInt(output2);
+        
+        if (operator==="plus") {
+            setResult(num1 + num2); 
+        } else if (operator==="min") {
+            setResult(num1 - num2); 
+        } else if (operator==="keer") {
+            setResult(num1 * num2); 
+        } else if (operator==="delen"){
+            setResult(num1 / num2); 
+        }
+    }, [output, operator, output2]); //useEffect update alleen als deze vars worden veranderd
+
+    return (
+        <div>
+            <form>
+                <input
+                    id="value" type="text" name="number1" value={output}
+                    onChange={(e) => setOutput(e.target.value)}
+                    placeholder="Typ nummer..."
+                />
+                <select id="operator" name="operator" value="plus"
+                    onChange={(e)=>setOperator(e.target.value)}>
+                    <option value="plus">+</option>
+                    <option value="min">-</option>
+                    <option value="keer">x</option>
+                    <option value="delen">/</option>                            
+                </select>
+                <input
+                    id="value2" type="text" name="number2" value={output2}
+                    onChange={(e) => setOutput2(e.target.value)}
+                    placeholder="Typ nummer..."
+                />
+                <p>{output} {operator} {output2} = {result} </p> 
+            </form>
+        </div>
+    );
+}
+
+    const root = ReactDOM.createRoot(document.getElementById("input"));
+    root.render(<App />);
+    
+</script>
+</body>
+</html>

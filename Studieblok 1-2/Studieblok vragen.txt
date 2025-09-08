@@ -1,0 +1,24 @@
+Alle vragen hier worden beantwoord zoals gewoonlijk behalve dan dat ik React js gebruik in plaats van angularjs
+
+Studieblok 1:
+
+Vraag 1: 
+de input en de data
+
+Vraag 2:
+Je leert dan een nieuwe programmeer taal die je op je cv kan zetten 
+
+Vraag 3:
+Niet op de goede positie gezet
+
+
+
+Studieblok 2:
+
+Vraag 1:
+1. Bepaald de hoofd pagina in
+2. Data opslaan en door geven
+3. Iets aan de html vast binden
+
+Vraag 2-3:
+C4-React-Oefenen/src/vragen/Vraag1.js

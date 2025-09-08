@@ -1,0 +1,18 @@
+Studieblok 3:
+
+Vraag 1:
+1. met JSX:
+const myElement = <h1>I Love JSX!</h1>;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
+2. zonder JSX: 
+const myElement = React.createElement('h1', {}, 'I do not use JSX!');
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
+
+Vraag 2-5:
+C4-React-Oefenen/src/vragen/Vraag2.js 
+t/m
+C4-React-Oefenen/src/vragen/Vraag5.js

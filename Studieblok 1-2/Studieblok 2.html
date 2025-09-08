@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="input"><input></div> <br>
+
+    <script type="text/babel">
+
+    function App() {
+            //1e var = state variable && 2e var is state updater
+            const [output, setOutput] = React.useState(""); 
+            //When setOutput is called, the state variable output gets updated, and React automatically re-renders the component to reflect the new value.
+            
+            return (
+                <div>
+                    <input
+                        type="text"
+                        onChange={(e) => setOutput(e.target.value)} //e.target.value Retrieves the current value of the input field. en dan update hij de setOutput
+                        placeholder="Type something..."
+                    />
+                    <p>{output}</p>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("input"));
+        root.render(<App />);
+    </script>
+</body>
+</html>
